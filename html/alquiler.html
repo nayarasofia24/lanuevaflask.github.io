@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlQUILER</title>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/style.css">
+
+</head>
+
+<body onload="versalones()">
+    <header class="header">
+        <div class="container vh-50">
+
+            <!--Barra de navegacion-->
+            <nav class="row text-white justify-content-between align-items-center text-uppercase pt-4">
+
+                <!--Logo-->
+                <a href="#" class="col-auto text-reset text-decoration-none">
+                    
+                    La nueva flask
+
+                </a>
+                <div class="col-auto">
+
+                    <a href="../index.html" class="text-reset pr-3 text-decoration-none">Home</a>
+                    <a href="../html/salones.html" class="text-reset pr-3 text-decoration-none">Salones</a>
+                    <a href="../html/sesion.html" class="text-reset pr-3 text-decoration-none">Iniciar sesion</a>
+                    
+
+                </div>
+
+            </nav>
+
+        </div>
+
+
+        <!---------------------------------------------------------------------------------------------------------------------->
+
+
+        <div class="container text-white ">
+
+            <div class="row">
+                <div class="col-xl-6 col-lg-6  col-md-6  col-sm-6 col-6">
+                
+                    <table class="table table-dark table-striped table-hover" id="tablaSalones">
+                        <tr>
+                            <th>ID</th>
+                            <th>NOMBRE</th>
+                            <th>UBICACIÓN</th>
+                            <th>PRECIO</th>
+                        </tr>
+                        
+                    </table>
+                    <br><span class="bg-black">¿Deseas alquilar uno? <a href="#" class="text-decoration-none text-warning" onclick="vertablaAlquiler()">AQUI</a></span>
+                
+                </div>
+                <div class="col-xl-6 col-lg-6  col-md-6  col-sm-6 col-6" style="display: none;" id=divForm>
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="text-black">Ingrese los datos correspondientes</h4>
+                        </div>
+                        <div class="card-body">
+                            <form id="miForm" autocomplete="off">
+                                <label>Nombre</label>
+                                <input type="text" class="form-control" id=txtNombre placeholder="Digite su Nombre">
+                                <label>Apellido</label>
+                                <input type="text" class="form-control" id=txtApellido placeholder="Digite su Apellido">
+                                <label>Salon de preferencia</label>
+                                <select name="salones" class="form-select" size="1" id="selectSalon">
+                                    <option value="0">Seleccione una opción</option>
+                                    <option value="Salón Medallón de Oro" data-id="31">Salón Medallón de Oro</option>
+                                    <option value="Salón Piedas del infinito"data-id="35">Salón Piedas del infinito</option>
+                                    <option value="Salón Caliz de la inmensidad"data-id="122">Salón Caliz de la inmensidad</option>
+                                    <option value="Salón agua de mar"data-id="112">Salón agua de mar</option>
+                                    <option value="Salón Malecón"data-id="555">Salón Malecón</option>
+                                    <option value="Salón Diskotek"data-id="776">Salón Diskotek</option>
+                                </select>
+                                <label>Correo</label>
+                                <input type="text" class="form-control" id=txtCorreo placeholder="Digite su correo">
+                                <label>Telefono</label>
+                                <input type="text" class="form-control" id=txtTelefono placeholder="Digite su numero de telefono">
+                                <br>
+                                <button type="button" id="btnagregar" class="btn btn-primary"onclick="agregar()">Agregar</button>
+                                <button type="button" id="btneditar" class="btn btn-warning"
+                                    onclick="actualizarInfo()">Editar</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br><br>
+    </header>
+
+        <br><br>
+    <div class="container">
+        <div id="cuadro" style="display: none">
+            <br><br>
+            <table class="table table-hover" id="mitabla">
+               <thead class="table-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Salon</th>
+                    <th>Correo</th>
+                    <th>Telefono</th>
+                    <th class="text-center">Opcion</th>
+                </tr>
+            </thead>
+            </table>
+
+            <button class="btn btn-warning" onclick="sendAPI()">Envíar información</button>
+            
+        </div>
+    </div>
+    </div>
+    
+    
+    <!---------------------------------------------------------------------------------------------------------------------->
+
+    <br>
+    <br>
+    <div class="bg-secondary text-center p-3">
+        <p>&copy;
+            UBICACION: CALLE 30 ---
+            CONTACTO: 3029201929
+        </p>
+
+    </div>
+</body>
+<script src="../js/file.js"></script>
+
+
+</html>
